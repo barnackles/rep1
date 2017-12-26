@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    
+    <title>Cycling Gear Calculator</title>
+</head>
+<body> 
+ 
+  <header class ="appdescription"> 
+       
+       <h1 class="descheading">Cycling Gear Calculator</h1>
+       
+        <p class="desccontent">Using this simple app you can quickly calculate your gear ratios, speed and cadence.</p>
+        <ol>
+            <li><p> Choose number of teeth on your chainring</p></li>
+            <li><p> Choose number of teeth on your cog</p></li>
+            <li><p> Choose your wheel circumference</p></li>
+            <li><p> Use cadence slider to calculate cycling speed on any chosen gear setup </p></li>
+        </ol>
+    </header>
+      <article class="container">
+        <section1 class="chainring">
+           <form>
+            <label for="Chainring">Chainring size:</label>
+                <select id="chainringteeth" name="chainringteeth" onchange="updateGr()" onload="updateGr()"> 
+                  <option value="34" selected>34</option>
+                  <option value="36">36</option>
+                  <option value="39">39</option>
+                  <option value="42">42</option>
+                  <option value="50">50</option>
+                  <option value="52">52</option>
+                  <option value="53">53</option>    
+            </select>
+            </form>
+        </section1>
+        <section2 class="cog">
+            <form>
+            <label for="sprocket">Cog size:</label>
+                <select id="cogteeth" name="cogteeth" onchange="updateGr()" onload="updateGr()"> 
+                  <option value="11" selected>11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="25">25</option>
+                  <option value="28">28</option>
+                  <option value="32">32</option>
+            </select>
+            </form>
+        </section2>
+        <section3 class="wheel">
+            <form>
+            <label class="cogx" for="wheelcirc">Wheel circumference:</label>
+                <select id="circumference" name="cicrumference" onchange="updateGr()" onload="updateGr()"> 
+                  <option value="2151.99" selected>25c tyre, wheel circumference: 2151.99 mm</option>
+                  <option value="2139.42">23c tyre, wheel circumference: 2139.42 mm</option>
+                  <option value="2151.99">25c tyre, wheel circumference: 2151.99 mm</option>
+                  <option value="2170.84">28c tyre, wheel circumference: 2170.84 mm</option>
+                  <option value="2195.97">32c tyre, wheel circumference: 2195.97 mm</option>
+                </select>
+            </form>
+        </section3>
+        <section4 class="gearratio">
+            <p>gear ratio:</p>
+            <p id="ratiodisplay"></p>
+        </section4> 
+        <section5 class='speedcadence'>
+          <p class="speedisplay">speed: <span id="speedometer">36.16</span> kph</p>
+          <p class="cadencedisplay">cadence: <span id="revmeter">90</span> rpm</p>
+          <input id="cadenceslider" type="range" min="1" max="150" value="90" onchange="updateGr()" onload="updateGr()">
+          </section5>
+        </article>
+  <footer>
+        <p>Copyright @ baRnackles 2017</p> 
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
